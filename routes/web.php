@@ -27,7 +27,7 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::put('/form', function (Request $request) {
+Route::post('/form', function (Request $request) {
     $request->validate([
         'name' => ['required'],
         'email' => ['required', 'email'],
@@ -40,10 +40,10 @@ Route::put('/form', function (Request $request) {
         'content' => $request->input('content'),
     ]);
 
-    return redirect()->route('thank-you-page');
+    return redirect()->route('thank-you');
 
 })->name('form');
 
 Route::get('/thank-you', function () {
-    return view('thankyou');
+    return view('thank-you');
 })->name('thank-you');

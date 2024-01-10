@@ -3,7 +3,7 @@
 @section('content')
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#">Test App</a>
+            <a class="navbar-brand" href="{{ route('home') }}">Test App</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
                     content.</p>
-                <a href="{{ route('index') }}" class="btn btn-primary">Go somewhere</a>
+                <a href="{{ route('contact') }}" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
     </div>

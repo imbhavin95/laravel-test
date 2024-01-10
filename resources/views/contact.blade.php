@@ -3,7 +3,7 @@
 @section('content')
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#">Test App</a>
+            <a class="navbar-brand" href="{{ route('home') }}">Test App</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -26,6 +26,7 @@
 
     <div class="container py-4">
         <form method="POST" action="{{ route('form') }}">
+            @csrf
             <div class="col-12">
                 <div class="form-floating mb-3">
                     <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
@@ -40,7 +41,7 @@
 
                 <div class="form-floating mb-3">
                     <input id="email" type="email"
-                        class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email_field"
+                        class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
                         placeholder="{{ __('E-Mail**') }}" value="{{ old('email') }}" required>
                     <label for="email">{{ __('E-Mail*') }}</label>
                     @if ($errors->has('email'))
